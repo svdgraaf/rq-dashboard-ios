@@ -23,6 +23,7 @@
 		86328D9318870D2500C3479B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86328D6F18870D2400C3479B /* UIKit.framework */; };
 		86328D9B18870D2500C3479B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86328D9918870D2500C3479B /* InfoPlist.strings */; };
 		86328D9D18870D2500C3479B /* rq_dashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86328D9C18870D2500C3479B /* rq_dashboardTests.m */; };
+		86328DA918870F3A00C3479B /* rqApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 86328DA818870F3A00C3479B /* rqApiClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		86328D9818870D2500C3479B /* rq-dashboardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rq-dashboardTests-Info.plist"; sourceTree = "<group>"; };
 		86328D9A18870D2500C3479B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		86328D9C18870D2500C3479B /* rq_dashboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rq_dashboardTests.m; sourceTree = "<group>"; };
+		86328DA718870F3A00C3479B /* rqApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rqApiClient.h; path = API/rqApiClient.h; sourceTree = "<group>"; };
+		86328DA818870F3A00C3479B /* rqApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = rqApiClient.m; path = API/rqApiClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 		86328D7118870D2400C3479B /* rq-dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				86328DA618870F0300C3479B /* API */,
 				86328D7A18870D2500C3479B /* rqAppDelegate.h */,
 				86328D7B18870D2500C3479B /* rqAppDelegate.m */,
 				86328D7D18870D2500C3479B /* Main_iPhone.storyboard */,
@@ -158,6 +162,15 @@
 				86328D9918870D2500C3479B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		86328DA618870F0300C3479B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				86328DA718870F3A00C3479B /* rqApiClient.h */,
+				86328DA818870F3A00C3479B /* rqApiClient.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86328DA918870F3A00C3479B /* rqApiClient.m in Sources */,
 				86328D8518870D2500C3479B /* rqFirstViewController.m in Sources */,
 				86328D8818870D2500C3479B /* rqSecondViewController.m in Sources */,
 				86328D7818870D2400C3479B /* main.m in Sources */,
