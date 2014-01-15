@@ -9,7 +9,7 @@
 #import "rqQueuesViewController.h"
 #import <RestKit/RestKit.h>
 #import "rqQueue.h"
-#import "rqDefaultCell.h"
+#import "RQDefaultCell.h"
 
 
 @interface rqQueuesViewController () {

@@ -135,8 +135,8 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
-                                    <outlet property="detailTextLabel" destination="Gfa-tV-wRV" id="F8x-vo-BCM"/>
-                                    <outlet property="textLabel" destination="bol-a2-cBR" id="q1y-tj-Mbx"/>
+                                    <outlet property="countLabel" destination="Gfa-tV-wRV" id="Eme-8R-KW2"/>
+                                    <outlet property="nameLabel" destination="bol-a2-cBR" id="Bci-aV-Cg8"/>
                                     <segue destination="8u2-t6-4td" kind="push" id="cf0-Ne-a6R"/>
                                 </connections>
                             </tableViewCell>
