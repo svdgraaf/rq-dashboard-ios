@@ -66,6 +66,12 @@
 #define COCOAPODS_VERSION_MINOR_SOCKit 1
 #define COCOAPODS_VERSION_PATCH_SOCKit 0
 
+// SORelativeDateTransformer
+#define COCOAPODS_POD_AVAILABLE_SORelativeDateTransformer
+#define COCOAPODS_VERSION_MAJOR_SORelativeDateTransformer 1
+#define COCOAPODS_VERSION_MINOR_SORelativeDateTransformer 1
+#define COCOAPODS_VERSION_PATCH_SORelativeDateTransformer 10
+
 // TransitionKit
 #define COCOAPODS_POD_AVAILABLE_TransitionKit
 #define COCOAPODS_VERSION_MAJOR_TransitionKit 2

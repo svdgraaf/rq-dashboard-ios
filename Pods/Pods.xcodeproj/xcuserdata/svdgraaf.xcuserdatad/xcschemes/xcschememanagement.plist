@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-SORelativeDateTransformer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TransitionKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>184AC0C1716C409C9F6DC147</key>
+		<key>30AF5ABEF6E94219BA76423E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>18622FC77C9748BE9DD45D7E</key>
+		<key>38AEA26919CA4379A77352C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2102D3225B0347EA80BA5CB0</key>
+		<key>7494454267A24F1985832162</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4111C41A72AD41308AE97A76</key>
+		<key>82B6078E624B4002A0E33B01</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>45567849D9F14320A6472601</key>
+		<key>9CDD8D7BFB3B431187765405</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AA285E4058C945F8B9E0BC09</key>
+		<key>A30110A0EB5F4ADE91CDC6FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BB2003C23AC649C4AED4A99D</key>
+		<key>C1AC5B8DE7B0495A94DC540D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E48A6E4D72D646DAA305BA05</key>
 		<dict>
 			<key>primary</key>
 			<true/>

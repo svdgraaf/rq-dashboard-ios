@@ -10,4 +10,8 @@
 
 @interface RQJobCell : UITableViewCell
 
+@property (strong, nonatomic) UILabel IBOutlet *originLabel;
+@property (strong, nonatomic) UILabel IBOutlet *createdLabel;
+@property (strong, nonatomic) UITextView IBOutlet *descriptionText;
+
 @end

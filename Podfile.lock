@@ -22,10 +22,12 @@ PODS:
     - TransitionKit (= 2.0.0)
   - RKValueTransformers (1.0.1)
   - SOCKit (1.1)
+  - SORelativeDateTransformer (1.1.10)
   - TransitionKit (2.0.0)
 
 DEPENDENCIES:
   - RestKit (~> 0.22.0)
+  - SORelativeDateTransformer (~> 1.1.10)
 
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
@@ -33,6 +35,7 @@ SPEC CHECKSUMS:
   RestKit: dc107a0aa4f962575ad0385bac5b3c5e4f591f4e
   RKValueTransformers: 1562d458b9c9d59ce777bfc5982f2e1aef2e9182
   SOCKit: 2f3bc4d07910de12dcc202815e07db68a3802581
+  SORelativeDateTransformer: eba9b9bcc290eb7c9754b9955ace59b890fa59f8
   TransitionKit: 433284465abacdc07852d7db6dd0cc075010059a
 
 COCOAPODS: 0.28.0

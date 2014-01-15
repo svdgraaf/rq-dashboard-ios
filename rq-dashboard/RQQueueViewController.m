@@ -10,6 +10,8 @@
 #import <RestKit/RestKit.h>
 #import "RQJobCell.h"
 #import "RQJob.h"
+#import "SORelativeDateTransformer.h"
+
 
 @interface RQQueueViewController () {
     NSArray *_jobs;
@@ -61,7 +63,15 @@
     RQJobCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
     RQJob *job = [self._jobs objectAtIndex:indexPath.row];
-//    [cell.nameLabel setText:job.description];
+    [cell.originLabel setText:[job origin]];
+    [cell.descriptionText setText:[job description]];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    2014-01-15T19:10:40.402074+00:00"
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSSSSZZZZZ"];
+    NSDate *readableDate = [dateFormatter dateFromString:[job created_at]];
+    NSString *relativeDate = [[SORelativeDateTransformer registeredTransformer] transformedValue:readableDate];
+    [cell.createdLabel setText:relativeDate];
     return cell;
 }
 
