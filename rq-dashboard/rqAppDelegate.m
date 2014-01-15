@@ -7,12 +7,44 @@
 //
 
 #import "rqAppDelegate.h"
+#import <RestKit/RestKit.h>
+#import <RestKit/Network/RKObjectManager.h>
+#import "rqQueue.h"
 
 @implementation rqAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    //let AFNetworking manage the activity indicator
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+
+    // Initialize HTTPClient
+    NSURL *baseURL = [NSURL URLWithString:@"http://brunhilda.allestoringen.nl:9181/"];
+    AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+
+    //we want to work with JSON-Data
+    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
+    
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+//    [objectManager.HTTPClient setAuthorizationHeaderWithUsername:@"username" password:@"password"];
+    
+    RKObjectMapping *queueMapping = [RKObjectMapping mappingForClass:[rqQueue class]];
+    [queueMapping addAttributeMappingsFromDictionary:@{
+                                                         @"url": @"url",
+                                                         @"count": @"count",
+                                                         @"name": @"name",
+                                                         }];
+    
+    
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:queueMapping
+                                                                                            method:RKRequestMethodGET
+                                                                                       pathPattern:@"queues.json"
+                                                                                           keyPath:@"queues"
+                                                                                       statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    [objectManager addResponseDescriptor:responseDescriptor];
+
+    
     return YES;
 }
 							

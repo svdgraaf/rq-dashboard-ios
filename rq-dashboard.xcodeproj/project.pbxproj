@@ -15,15 +15,15 @@
 		86328D7C18870D2500C3479B /* rqAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86328D7B18870D2500C3479B /* rqAppDelegate.m */; };
 		86328D7F18870D2500C3479B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86328D7D18870D2500C3479B /* Main_iPhone.storyboard */; };
 		86328D8218870D2500C3479B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86328D8018870D2500C3479B /* Main_iPad.storyboard */; };
-		86328D8518870D2500C3479B /* rqFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86328D8418870D2500C3479B /* rqFirstViewController.m */; };
-		86328D8818870D2500C3479B /* rqSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86328D8718870D2500C3479B /* rqSecondViewController.m */; };
 		86328D8A18870D2500C3479B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86328D8918870D2500C3479B /* Images.xcassets */; };
 		86328D9118870D2500C3479B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86328D9018870D2500C3479B /* XCTest.framework */; };
 		86328D9218870D2500C3479B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86328D6B18870D2400C3479B /* Foundation.framework */; };
 		86328D9318870D2500C3479B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86328D6F18870D2400C3479B /* UIKit.framework */; };
 		86328D9B18870D2500C3479B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86328D9918870D2500C3479B /* InfoPlist.strings */; };
 		86328D9D18870D2500C3479B /* rq_dashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86328D9C18870D2500C3479B /* rq_dashboardTests.m */; };
-		86328DA918870F3A00C3479B /* rqApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 86328DA818870F3A00C3479B /* rqApiClient.m */; };
+		86E24D091887120900AB85AC /* rqQueuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D081887120900AB85AC /* rqQueuesViewController.m */; };
+		86E24D0C1887142A00AB85AC /* rqQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D0B1887142A00AB85AC /* rqQueue.m */; };
+		B4DC8CDAF4AB487AB73557C4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C3099FD003430D8E48CDF8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68C3099FD003430D8E48CDF8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		74304A8CB37E482BA342CC13 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		86328D6818870D2400C3479B /* rq-dashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rq-dashboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86328D6B18870D2400C3479B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86328D6D18870D2400C3479B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -49,18 +51,16 @@
 		86328D7B18870D2500C3479B /* rqAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rqAppDelegate.m; sourceTree = "<group>"; };
 		86328D7E18870D2500C3479B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		86328D8118870D2500C3479B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		86328D8318870D2500C3479B /* rqFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rqFirstViewController.h; sourceTree = "<group>"; };
-		86328D8418870D2500C3479B /* rqFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rqFirstViewController.m; sourceTree = "<group>"; };
-		86328D8618870D2500C3479B /* rqSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rqSecondViewController.h; sourceTree = "<group>"; };
-		86328D8718870D2500C3479B /* rqSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rqSecondViewController.m; sourceTree = "<group>"; };
 		86328D8918870D2500C3479B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		86328D8F18870D2500C3479B /* rq-dashboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "rq-dashboardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86328D9018870D2500C3479B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		86328D9818870D2500C3479B /* rq-dashboardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rq-dashboardTests-Info.plist"; sourceTree = "<group>"; };
 		86328D9A18870D2500C3479B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		86328D9C18870D2500C3479B /* rq_dashboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rq_dashboardTests.m; sourceTree = "<group>"; };
-		86328DA718870F3A00C3479B /* rqApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rqApiClient.h; path = API/rqApiClient.h; sourceTree = "<group>"; };
-		86328DA818870F3A00C3479B /* rqApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = rqApiClient.m; path = API/rqApiClient.m; sourceTree = "<group>"; };
+		86E24D071887120900AB85AC /* rqQueuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rqQueuesViewController.h; sourceTree = "<group>"; };
+		86E24D081887120900AB85AC /* rqQueuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rqQueuesViewController.m; sourceTree = "<group>"; };
+		86E24D0A1887142A00AB85AC /* rqQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rqQueue.h; path = API/rqQueue.h; sourceTree = "<group>"; };
+		86E24D0B1887142A00AB85AC /* rqQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = rqQueue.m; path = API/rqQueue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +71,7 @@
 				86328D6E18870D2400C3479B /* CoreGraphics.framework in Frameworks */,
 				86328D7018870D2400C3479B /* UIKit.framework in Frameworks */,
 				86328D6C18870D2400C3479B /* Foundation.framework in Frameworks */,
+				B4DC8CDAF4AB487AB73557C4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +95,7 @@
 				86328D9618870D2500C3479B /* rq-dashboardTests */,
 				86328D6A18870D2400C3479B /* Frameworks */,
 				86328D6918870D2400C3479B /* Products */,
+				74304A8CB37E482BA342CC13 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +115,7 @@
 				86328D6D18870D2400C3479B /* CoreGraphics.framework */,
 				86328D6F18870D2400C3479B /* UIKit.framework */,
 				86328D9018870D2500C3479B /* XCTest.framework */,
+				68C3099FD003430D8E48CDF8 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -125,12 +128,10 @@
 				86328D7B18870D2500C3479B /* rqAppDelegate.m */,
 				86328D7D18870D2500C3479B /* Main_iPhone.storyboard */,
 				86328D8018870D2500C3479B /* Main_iPad.storyboard */,
-				86328D8318870D2500C3479B /* rqFirstViewController.h */,
-				86328D8418870D2500C3479B /* rqFirstViewController.m */,
-				86328D8618870D2500C3479B /* rqSecondViewController.h */,
-				86328D8718870D2500C3479B /* rqSecondViewController.m */,
 				86328D8918870D2500C3479B /* Images.xcassets */,
 				86328D7218870D2400C3479B /* Supporting Files */,
+				86E24D071887120900AB85AC /* rqQueuesViewController.h */,
+				86E24D081887120900AB85AC /* rqQueuesViewController.m */,
 			);
 			path = "rq-dashboard";
 			sourceTree = "<group>";
@@ -167,8 +168,8 @@
 		86328DA618870F0300C3479B /* API */ = {
 			isa = PBXGroup;
 			children = (
-				86328DA718870F3A00C3479B /* rqApiClient.h */,
-				86328DA818870F3A00C3479B /* rqApiClient.m */,
+				86E24D0A1887142A00AB85AC /* rqQueue.h */,
+				86E24D0B1887142A00AB85AC /* rqQueue.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -180,9 +181,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86328DA018870D2500C3479B /* Build configuration list for PBXNativeTarget "rq-dashboard" */;
 			buildPhases = (
+				664DCD13C19A4DFEAD5B4714 /* Check Pods Manifest.lock */,
 				86328D6418870D2400C3479B /* Sources */,
 				86328D6518870D2400C3479B /* Frameworks */,
 				86328D6618870D2400C3479B /* Resources */,
+				E5BB4EC7868E4A1FA8613830 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,14 +270,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		664DCD13C19A4DFEAD5B4714 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E5BB4EC7868E4A1FA8613830 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		86328D6418870D2400C3479B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86328DA918870F3A00C3479B /* rqApiClient.m in Sources */,
-				86328D8518870D2500C3479B /* rqFirstViewController.m in Sources */,
-				86328D8818870D2500C3479B /* rqSecondViewController.m in Sources */,
+				86E24D0C1887142A00AB85AC /* rqQueue.m in Sources */,
+				86E24D091887120900AB85AC /* rqQueuesViewController.m in Sources */,
 				86328D7818870D2400C3479B /* main.m in Sources */,
 				86328D7C18870D2500C3479B /* rqAppDelegate.m in Sources */,
 			);
@@ -410,6 +445,7 @@
 		};
 		86328DA118870D2500C3479B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74304A8CB37E482BA342CC13 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -423,6 +459,7 @@
 		};
 		86328DA218870D2500C3479B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74304A8CB37E482BA342CC13 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -495,6 +532,7 @@
 				86328DA218870D2500C3479B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86328DA318870D2500C3479B /* Build configuration list for PBXNativeTarget "rq-dashboardTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +541,7 @@
 				86328DA518870D2500C3479B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
