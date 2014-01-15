@@ -10,6 +10,7 @@
 #import <RestKit/RestKit.h>
 #import "rqQueue.h"
 #import "RQDefaultCell.h"
+#import "RQQueueViewController.h"
 
 
 @interface rqQueuesViewController () {
@@ -69,6 +70,34 @@
     [cell.countLabel setText:queue.count];
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showQueue"]) {
+//        SerinusTabBarViewController *destViewController = (SerinusTabBarViewController*);
+        
+//        if(sender == self.searchDisplayController.searchResultsTableView) {
+//            NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+//            SerinusCompany *company = self._searchResults[indexPath.row];
+//            [destViewController.navigationItem setTitle:[company name]];
+//            [[segue destinationViewController] setDetailItem:company];
+//        } else {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            rqQueue *queue = [self._queues objectAtIndex:indexPath.row];
+//            SerinusCompany *company;
+//            if([self hasFavorites] && indexPath.section == 0) {
+//                company = self._favorites[indexPath.row];
+//            } else {
+//                company = self._companies[indexPath.row];
+//            }
+            RQQueueViewController *dvc = [segue destinationViewController];
+            [dvc.navigationItem setTitle:[queue name]];
+            dvc._name = [queue name];
+        
+//            [[segue destinationViewController] setDetailItem:company];
+//        }
+    }
 }
 
 @end

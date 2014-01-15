@@ -10,6 +10,8 @@
 #import <RestKit/RestKit.h>
 #import <RestKit/Network/RKObjectManager.h>
 #import "rqQueue.h"
+#import "RQJob.h"
+
 
 @implementation rqAppDelegate
 
@@ -38,12 +40,32 @@
     
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:queueMapping
                                                                                             method:RKRequestMethodGET
-                                                                                       pathPattern:@"queues.json"
+                                                                                       pathPattern:@"queues\\.json"
                                                                                            keyPath:@"queues"
                                                                                        statusCodes:[NSIndexSet indexSetWithIndex:200]];
     
     [objectManager addResponseDescriptor:responseDescriptor];
 
+    RKObjectMapping *jobMapping = [RKObjectMapping mappingForClass:[RQJob class]];
+    [jobMapping addAttributeMappingsFromDictionary:@{
+                                                     @"origin": @"origin",
+                                                     @"ended_at": @"ended_at",
+                                                     @"created_at": @"created_at",
+                                                     @"enqueued_at": @"enqueued_at",
+                                                     @"description": @"description",
+                                                     @"result": @"result",
+                                                     @"exc_info": @"exc_info",
+                                                     @"id": @"identifier",
+                                                    }];
+    
+    
+    RKResponseDescriptor *jobResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:jobMapping
+                                                                                            method:RKRequestMethodGET
+                                                                                       pathPattern:@"jobs/:name\\.json"
+                                                                                           keyPath:@"jobs"
+                                                                                       statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    [objectManager addResponseDescriptor:jobResponseDescriptor];
     
     return YES;
 }

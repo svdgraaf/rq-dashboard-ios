@@ -24,6 +24,9 @@
 		86E24D091887120900AB85AC /* rqQueuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D081887120900AB85AC /* rqQueuesViewController.m */; };
 		86E24D0C1887142A00AB85AC /* rqQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D0B1887142A00AB85AC /* rqQueue.m */; };
 		86E24D1318871A7100AB85AC /* rqDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D1218871A7100AB85AC /* rqDefaultCell.m */; };
+		86E24D1618871C1F00AB85AC /* RQQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D1518871C1F00AB85AC /* RQQueueViewController.m */; };
+		86E24D1918871CD300AB85AC /* RQJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D1818871CD300AB85AC /* RQJob.m */; };
+		86E24D1C188724C300AB85AC /* RQJobCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D1B188724C300AB85AC /* RQJobCell.m */; };
 		B4DC8CDAF4AB487AB73557C4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C3099FD003430D8E48CDF8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,12 @@
 		86E24D0B1887142A00AB85AC /* rqQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = rqQueue.m; path = API/rqQueue.m; sourceTree = "<group>"; };
 		86E24D1118871A7100AB85AC /* rqDefaultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rqDefaultCell.h; path = Cells/rqDefaultCell.h; sourceTree = "<group>"; };
 		86E24D1218871A7100AB85AC /* rqDefaultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = rqDefaultCell.m; path = Cells/rqDefaultCell.m; sourceTree = "<group>"; };
+		86E24D1418871C1F00AB85AC /* RQQueueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RQQueueViewController.h; sourceTree = "<group>"; };
+		86E24D1518871C1F00AB85AC /* RQQueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQQueueViewController.m; sourceTree = "<group>"; };
+		86E24D1718871CD300AB85AC /* RQJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RQJob.h; path = API/RQJob.h; sourceTree = "<group>"; };
+		86E24D1818871CD300AB85AC /* RQJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RQJob.m; path = API/RQJob.m; sourceTree = "<group>"; };
+		86E24D1A188724C300AB85AC /* RQJobCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RQJobCell.h; path = Cells/RQJobCell.h; sourceTree = "<group>"; };
+		86E24D1B188724C300AB85AC /* RQJobCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RQJobCell.m; path = Cells/RQJobCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +145,8 @@
 				86328D7218870D2400C3479B /* Supporting Files */,
 				86E24D071887120900AB85AC /* rqQueuesViewController.h */,
 				86E24D081887120900AB85AC /* rqQueuesViewController.m */,
+				86E24D1418871C1F00AB85AC /* RQQueueViewController.h */,
+				86E24D1518871C1F00AB85AC /* RQQueueViewController.m */,
 			);
 			path = "rq-dashboard";
 			sourceTree = "<group>";
@@ -172,6 +183,8 @@
 		86328DA618870F0300C3479B /* API */ = {
 			isa = PBXGroup;
 			children = (
+				86E24D1718871CD300AB85AC /* RQJob.h */,
+				86E24D1818871CD300AB85AC /* RQJob.m */,
 				86E24D0A1887142A00AB85AC /* rqQueue.h */,
 				86E24D0B1887142A00AB85AC /* rqQueue.m */,
 			);
@@ -183,6 +196,8 @@
 			children = (
 				86E24D1118871A7100AB85AC /* rqDefaultCell.h */,
 				86E24D1218871A7100AB85AC /* rqDefaultCell.m */,
+				86E24D1A188724C300AB85AC /* RQJobCell.h */,
+				86E24D1B188724C300AB85AC /* RQJobCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -324,6 +339,9 @@
 				86E24D0C1887142A00AB85AC /* rqQueue.m in Sources */,
 				86E24D091887120900AB85AC /* rqQueuesViewController.m in Sources */,
 				86328D7818870D2400C3479B /* main.m in Sources */,
+				86E24D1918871CD300AB85AC /* RQJob.m in Sources */,
+				86E24D1C188724C300AB85AC /* RQJobCell.m in Sources */,
+				86E24D1618871C1F00AB85AC /* RQQueueViewController.m in Sources */,
 				86328D7C18870D2500C3479B /* rqAppDelegate.m in Sources */,
 				86E24D1318871A7100AB85AC /* rqDefaultCell.m in Sources */,
 			);
