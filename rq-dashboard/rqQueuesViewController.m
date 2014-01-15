@@ -9,6 +9,7 @@
 #import "rqQueuesViewController.h"
 #import <RestKit/RestKit.h>
 #import "rqQueue.h"
+#import "rqDefaultCell.h"
 
 
 @interface rqQueuesViewController () {
@@ -56,15 +57,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"defaultCell";
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"rqDefaultCell";
+    rqDefaultCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     
     rqQueue *queue = [self._queues objectAtIndex:indexPath.row];
-    [cell.textLabel setText:queue.name];
+    [cell.nameLabel setText:queue.name];
     if([queue.name isEqualToString:@"failed"]) {
-        [cell.textLabel setTextColor:[UIColor redColor]];
+        [cell.nameLabel setTextColor:[UIColor redColor]];
     }
-    [cell.detailTextLabel setText:queue.count];
+    [cell.countLabel setText:queue.count];
     
     return cell;
 }

@@ -23,6 +23,7 @@
 		86328D9D18870D2500C3479B /* rq_dashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86328D9C18870D2500C3479B /* rq_dashboardTests.m */; };
 		86E24D091887120900AB85AC /* rqQueuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D081887120900AB85AC /* rqQueuesViewController.m */; };
 		86E24D0C1887142A00AB85AC /* rqQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D0B1887142A00AB85AC /* rqQueue.m */; };
+		86E24D1318871A7100AB85AC /* rqDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D1218871A7100AB85AC /* rqDefaultCell.m */; };
 		B4DC8CDAF4AB487AB73557C4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C3099FD003430D8E48CDF8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,8 @@
 		86E24D081887120900AB85AC /* rqQueuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rqQueuesViewController.m; sourceTree = "<group>"; };
 		86E24D0A1887142A00AB85AC /* rqQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rqQueue.h; path = API/rqQueue.h; sourceTree = "<group>"; };
 		86E24D0B1887142A00AB85AC /* rqQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = rqQueue.m; path = API/rqQueue.m; sourceTree = "<group>"; };
+		86E24D1118871A7100AB85AC /* rqDefaultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rqDefaultCell.h; path = Cells/rqDefaultCell.h; sourceTree = "<group>"; };
+		86E24D1218871A7100AB85AC /* rqDefaultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = rqDefaultCell.m; path = Cells/rqDefaultCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,7 @@
 		86328D7118870D2400C3479B /* rq-dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				86E24D1018871A5900AB85AC /* Cells */,
 				86328DA618870F0300C3479B /* API */,
 				86328D7A18870D2500C3479B /* rqAppDelegate.h */,
 				86328D7B18870D2500C3479B /* rqAppDelegate.m */,
@@ -174,6 +178,15 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		86E24D1018871A5900AB85AC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				86E24D1118871A7100AB85AC /* rqDefaultCell.h */,
+				86E24D1218871A7100AB85AC /* rqDefaultCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,7 +233,7 @@
 		86328D6018870D2400C3479B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = rq;
+				CLASSPREFIX = RQ;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Serinus42;
 				TargetAttributes = {
@@ -312,6 +325,7 @@
 				86E24D091887120900AB85AC /* rqQueuesViewController.m in Sources */,
 				86328D7818870D2400C3479B /* main.m in Sources */,
 				86328D7C18870D2500C3479B /* rqAppDelegate.m in Sources */,
+				86E24D1318871A7100AB85AC /* rqDefaultCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
