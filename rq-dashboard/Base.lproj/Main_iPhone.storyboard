@@ -30,7 +30,7 @@
                             <constraint firstAttribute="trailing" secondItem="29h-N2-YGT" secondAttribute="trailing" constant="20" symbolic="YES" id="FIx-Zl-RBr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings.png" id="Z7h-1E-pvt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,7 +59,7 @@
                             <outlet property="delegate" destination="bQe-td-LRG" id="TzG-kz-uP3"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Workers" id="gKk-BP-zkW"/>
+                    <tabBarItem key="tabBarItem" title="Workers" image="workers.png" id="gKk-BP-zkW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBk-bi-DbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,7 +89,7 @@
         <scene sceneID="1lf-VQ-tfs">
             <objects>
                 <navigationController definesPresentationContext="YES" id="uMI-1u-OWZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Queues" id="SuP-rL-Mjg"/>
+                    <tabBarItem key="tabBarItem" title="Queues" image="list.png" id="SuP-rL-Mjg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bhL-OR-gxD">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -146,7 +146,7 @@
                             <outlet property="delegate" destination="UsD-d7-4xv" id="8zX-vQ-uSv"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Queues" id="MAl-Wi-5fn"/>
+                    <tabBarItem key="tabBarItem" title="Queues" image="list.png" id="MAl-Wi-5fn"/>
                     <navigationItem key="navigationItem" title="Queues" id="OFt-Zn-z0L">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="GaZ-b0-iao"/>
                     </navigationItem>
@@ -286,6 +286,11 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="list.png" width="32" height="32"/>
+        <image name="settings.png" width="25" height="25"/>
+        <image name="workers.png" width="25" height="25"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
