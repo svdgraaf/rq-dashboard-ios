@@ -16,6 +16,7 @@
 @property float reload_timeout;
 @property BOOL *is_loading;
 @property (strong, atomic) IBOutlet UIProgressView *progress_view;
+@property (strong, atomic) IBOutlet UIRefreshControl *refresh_control;
 @property (strong, atomic) IBOutlet UIBarButtonItem *reload_button;
 
 - (IBAction)refresh:(id)sender;

@@ -21,6 +21,9 @@
 		86328D9318870D2500C3479B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86328D6F18870D2400C3479B /* UIKit.framework */; };
 		86328D9B18870D2500C3479B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86328D9918870D2500C3479B /* InfoPlist.strings */; };
 		86328D9D18870D2500C3479B /* rq_dashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86328D9C18870D2500C3479B /* rq_dashboardTests.m */; };
+		866B86881893D23300DBD3CA /* RQJobViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 866B86871893D23300DBD3CA /* RQJobViewController.m */; };
+		866B86901893D47400DBD3CA /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 866B868E1893D47400DBD3CA /* delete.png */; };
+		866B86911893D47400DBD3CA /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 866B868F1893D47400DBD3CA /* delete@2x.png */; };
 		867CA7881891BCC30077D120 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 867CA7861891BCC30077D120 /* list.png */; };
 		867CA7891891BCC30077D120 /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 867CA7871891BCC30077D120 /* list@2x.png */; };
 		867CA7941891BEEC0077D120 /* workers.png in Resources */ = {isa = PBXBuildFile; fileRef = 867CA7921891BEEC0077D120 /* workers.png */; };
@@ -67,6 +70,10 @@
 		86328D9818870D2500C3479B /* rq-dashboardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rq-dashboardTests-Info.plist"; sourceTree = "<group>"; };
 		86328D9A18870D2500C3479B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		86328D9C18870D2500C3479B /* rq_dashboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rq_dashboardTests.m; sourceTree = "<group>"; };
+		866B86861893D23300DBD3CA /* RQJobViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RQJobViewController.h; sourceTree = "<group>"; };
+		866B86871893D23300DBD3CA /* RQJobViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQJobViewController.m; sourceTree = "<group>"; };
+		866B868E1893D47400DBD3CA /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		866B868F1893D47400DBD3CA /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
 		867CA7861891BCC30077D120 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
 		867CA7871891BCC30077D120 /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
 		867CA7921891BEEC0077D120 /* workers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = workers.png; sourceTree = "<group>"; };
@@ -159,6 +166,8 @@
 				86E24D081887120900AB85AC /* rqQueuesViewController.m */,
 				86E24D1418871C1F00AB85AC /* RQQueueViewController.h */,
 				86E24D1518871C1F00AB85AC /* RQQueueViewController.m */,
+				866B86861893D23300DBD3CA /* RQJobViewController.h */,
+				866B86871893D23300DBD3CA /* RQJobViewController.m */,
 			);
 			path = "rq-dashboard";
 			sourceTree = "<group>";
@@ -166,12 +175,7 @@
 		86328D7218870D2400C3479B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				867CA7961891BEF50077D120 /* settings.png */,
-				867CA7971891BEF50077D120 /* settings@2x.png */,
-				867CA7921891BEEC0077D120 /* workers.png */,
-				867CA7931891BEEC0077D120 /* workers@2x.png */,
-				867CA7861891BCC30077D120 /* list.png */,
-				867CA7871891BCC30077D120 /* list@2x.png */,
+				866B868D1893D45C00DBD3CA /* images */,
 				86328D7318870D2400C3479B /* rq-dashboard-Info.plist */,
 				86328D7418870D2400C3479B /* InfoPlist.strings */,
 				86328D7718870D2400C3479B /* main.m */,
@@ -207,6 +211,21 @@
 				86E24D0B1887142A00AB85AC /* rqQueue.m */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		866B868D1893D45C00DBD3CA /* images */ = {
+			isa = PBXGroup;
+			children = (
+				866B868E1893D47400DBD3CA /* delete.png */,
+				866B868F1893D47400DBD3CA /* delete@2x.png */,
+				867CA7961891BEF50077D120 /* settings.png */,
+				867CA7971891BEF50077D120 /* settings@2x.png */,
+				867CA7921891BEEC0077D120 /* workers.png */,
+				867CA7931891BEEC0077D120 /* workers@2x.png */,
+				867CA7861891BCC30077D120 /* list.png */,
+				867CA7871891BCC30077D120 /* list@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		86E24D1018871A5900AB85AC /* Cells */ = {
@@ -301,7 +320,9 @@
 			files = (
 				867CA7951891BEEC0077D120 /* workers@2x.png in Resources */,
 				867CA7881891BCC30077D120 /* list.png in Resources */,
+				866B86911893D47400DBD3CA /* delete@2x.png in Resources */,
 				867CA7891891BCC30077D120 /* list@2x.png in Resources */,
+				866B86901893D47400DBD3CA /* delete.png in Resources */,
 				86328D8218870D2500C3479B /* Main_iPad.storyboard in Resources */,
 				86328D8A18870D2500C3479B /* Images.xcassets in Resources */,
 				86328D7F18870D2500C3479B /* Main_iPhone.storyboard in Resources */,
@@ -366,6 +387,7 @@
 				86E24D1918871CD300AB85AC /* RQJob.m in Sources */,
 				86E24D1C188724C300AB85AC /* RQJobCell.m in Sources */,
 				86E24D1618871C1F00AB85AC /* RQQueueViewController.m in Sources */,
+				866B86881893D23300DBD3CA /* RQJobViewController.m in Sources */,
 				86328D7C18870D2500C3479B /* rqAppDelegate.m in Sources */,
 				86E24D1318871A7100AB85AC /* rqDefaultCell.m in Sources */,
 			);

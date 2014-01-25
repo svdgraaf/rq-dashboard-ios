@@ -20,6 +20,7 @@
     float reload_timeout;
     BOOL is_loading;
     UIProgressView *progress_view;
+    UIRefreshControl *refresh_control;
     UIBarButtonItem *reload_button;
 }
 @end
@@ -33,7 +34,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.time = 0;
-    self.reload_timeout = 5;
+    self.reload_timeout = 2;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(refresh:) userInfo:nil repeats:YES];
     [self fetchQueues];
 }
@@ -55,7 +56,7 @@
 }
 
 - (IBAction)refresh:(id)sender {
-    if(sender == self.reload_button) {
+    if(sender == self.reload_button || sender == self.refresh_control) {
         // refresh was pushed, force reload
         NSLog(@"update forced");
         [self fetchQueues];
@@ -89,7 +90,7 @@
     rqDefaultCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if([queue.name isEqualToString:@"failed"]) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"default"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"rqFailedCell"];
         [cell.nameLabel setTextColor:[UIColor redColor]];
     }
 
