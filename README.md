@@ -7,6 +7,9 @@ First of, why not? But I got tired of continuously checking the webinterface on 
 ## Compatibility
 The current release is compatible with version rq-dashboard v0.3.3
 
+## Screenshot
+![image](https://raw.github.com/svdgraaf/rq-dashboard-ios/5495b5929bd65b84cc048036ab69fb959bcba988/screenshot.png)
+
 ## Building
 This projects uses CocoaPods, please make sure you have CocoaPods installed. After that, initialize the [CocoaPods](http://cocoapods.org/):
 
