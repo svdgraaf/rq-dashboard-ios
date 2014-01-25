@@ -12,4 +12,6 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *count;
+
+- (void)empty;
 @end

@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "rqQueue.h";
 
 @interface RQQueueViewController : UITableViewController
 @property (strong, nonatomic) NSString *_name;
+@property (strong, nonatomic) rqQueue *_queue;
 @property (strong, nonatomic) NSArray *_jobs;
 
 - (IBAction)refresh:(id)sender;
+- (IBAction)empty:(id)sender;
+
 
 @end

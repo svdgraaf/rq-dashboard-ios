@@ -16,6 +16,7 @@
 
 @interface RQQueueViewController () {
     NSArray *_jobs;
+    rqQueue *_queue;
     NSArray *_name;
 }
 @end
@@ -44,6 +45,10 @@
 
 }
 
+- (IBAction)empty:(id)sender {
+    [self._queue empty];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)didReceiveMemoryWarning
 {

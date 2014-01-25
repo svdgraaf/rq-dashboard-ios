@@ -24,6 +24,7 @@
 - (void)cancel {
     AFHTTPClient *httpClient = [RKObjectManager sharedManager].HTTPClient;
     [httpClient postPath:[NSString stringWithFormat:@"/job/%@/cancel", self.identifier] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"response: %@", responseObject);
         // all ok
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         // TODO: should we show an error?

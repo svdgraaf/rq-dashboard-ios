@@ -11,6 +11,7 @@
 #import <RestKit/Network/RKObjectManager.h>
 #import "rqQueue.h"
 #import "RQJob.h"
+#import "RQWorker.h"
 
 
 @implementation rqAppDelegate
@@ -64,8 +65,22 @@
                                                                                        pathPattern:@"jobs/:name\\.json"
                                                                                            keyPath:@"jobs"
                                                                                        statusCodes:[NSIndexSet indexSetWithIndex:200]];
-    
     [objectManager addResponseDescriptor:jobResponseDescriptor];
+    
+    RKObjectMapping *workerMapping = [RKObjectMapping mappingForClass:[RQWorker class]];
+    [workerMapping addAttributeMappingsFromDictionary:@{
+                                                       @"queues": @"queues",
+                                                       @"name": @"name",
+                                                       @"state": @"state",
+                                                       }];
+    RKResponseDescriptor *workerResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:workerMapping
+                                                                                               method:RKRequestMethodGET
+                                                                                          pathPattern:@"workers\\.json"
+                                                                                              keyPath:@"workers"
+                                                                                          statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    [objectManager addResponseDescriptor:workerResponseDescriptor];
+    
+
     
     return YES;
 }
