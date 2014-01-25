@@ -4,6 +4,9 @@ This is an interface for [RQ-Dashboard](https://github.com/nvie/rq-dashboard) fo
 ## Why?
 First of, why not? But I got tired of continuously checking the webinterface on my phone, and wanted something simpeler.
 
+## Compatibility
+The current release is compatible with version rq-dashboard v0.3.3
+
 ## Building
 This projects uses CocoaPods, please make sure you have CocoaPods installed. After that, initialize the [CocoaPods](http://cocoapods.org/):
 
