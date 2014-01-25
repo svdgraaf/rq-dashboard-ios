@@ -2,7 +2,7 @@
 This is an interface for [RQ-Dashboard](https://github.com/nvie/rq-dashboard) for iOS. With this app you can manage your queues, look at the state of your workers, without ever touching your browser.
 
 ## Why?
-First of, why not? But I got tired of continuously checking the webinterface on my phone, and wanted something simpeler.
+First of, why not? But I got tired of continuously checking the webinterface on my phone, and wanted something simpeler. Also, I wanted an oppertunity for building my first real objective-c app :)
 
 ## Compatibility
 The current release is compatible with version rq-dashboard v0.3.3
