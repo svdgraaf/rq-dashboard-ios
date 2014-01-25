@@ -18,4 +18,6 @@
 @property (strong, nonatomic) NSString *exc_info;
 @property (strong, nonatomic) NSString *identifier;
 
+- (void)cancel;
+- (void)requeue;
 @end

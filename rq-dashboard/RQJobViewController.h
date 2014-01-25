@@ -12,6 +12,6 @@
 @interface RQJobViewController : UITableViewController
 @property (strong, nonatomic) RQJob *job;
 
-//- (void)setJob:(RQJob *)job;
+- (IBAction)cancel:(id)sender;
 
 @end

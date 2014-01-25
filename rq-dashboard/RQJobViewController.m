@@ -25,10 +25,6 @@
     return self;
 }
 
-//-(void)setJob:(RQJob *)job {
-//    self.job = job;
-//}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -60,6 +56,11 @@
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 4;
+}
+
+- (IBAction)cancel:(id)sender {
+    [self.job cancel];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
