@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <RestKit/RestKit.h>
 
 @interface RQWorker : NSObject
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *state;
 @property (strong, nonatomic) NSArray *queues;
+
++ (void)addMappingTo:(RKObjectManager *)manager;
 @end

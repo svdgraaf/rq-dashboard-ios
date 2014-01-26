@@ -7,8 +7,7 @@
 //
 
 #import "rqQueue.h"
-#import <RestKit/Network/RKObjectManager.h>
-
+#import <RestKit/RestKit.h>
 
 @implementation rqQueue
 
@@ -23,6 +22,24 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         // TODO: should we show an error?
     }];
+}
+
++ (void)addMappingTo:(RKObjectManager *)manager {
+    RKObjectMapping *queueMapping = [RKObjectMapping mappingForClass:[self class]];
+    [queueMapping addAttributeMappingsFromDictionary:@{
+                                                       @"url": @"url",
+                                                       @"count": @"count",
+                                                       @"name": @"name",
+                                                       }];
+    
+    
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:queueMapping
+                                                                                            method:RKRequestMethodGET
+                                                                                       pathPattern:@"queues\\.json"
+                                                                                           keyPath:@"queues"
+                                                                                       statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    [manager addResponseDescriptor:responseDescriptor];
 }
 
 @end

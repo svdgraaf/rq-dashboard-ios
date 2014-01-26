@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <RestKit/RestKit.h>
 
 @interface RQJob : NSObject
 @property (strong, nonatomic) NSString *origin;
@@ -20,4 +21,5 @@
 
 - (void)cancel;
 - (void)requeue;
++ (void)addMappingTo:(RKObjectManager *)manager;
 @end

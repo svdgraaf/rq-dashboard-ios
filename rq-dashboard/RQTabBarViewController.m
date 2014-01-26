@@ -1,19 +1,19 @@
 //
-//  RQSettingsViewController.m
+//  RQTabBarViewController.m
 //  rq-dashboard
 //
 //  Created by Sander van de Graaf on 1/26/14.
 //  Copyright (c) 2014 Serinus42. All rights reserved.
 //
 
+#import "RQTabBarViewController.h"
 #import "RQSettingsViewController.h"
-#import "RQClient.h"
 
-@interface RQSettingsViewController ()
+@interface RQTabBarViewController ()
 
 @end
 
-@implementation RQSettingsViewController
+@implementation RQTabBarViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,13 +27,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	// Do any additional setup after loading the view.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    UIEdgeInsets inset = UIEdgeInsetsMake(65, 0, 50, 0);
-    self.settingsTableView.contentInset = inset;
-    self.settingsTableView.scrollIndicatorInsets = inset;
+- (void)viewDidAppear:(BOOL)animated {
 }
 
 - (void)didReceiveMemoryWarning

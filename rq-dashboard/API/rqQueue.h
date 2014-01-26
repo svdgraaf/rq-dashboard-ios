@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <RestKit/RestKit.h>
 
 @interface rqQueue : NSObject
 @property (strong, nonatomic) NSString *name;
@@ -14,4 +15,5 @@
 @property (strong, nonatomic) NSString *count;
 
 - (void)empty;
++ (void)addMappingTo:(RKObjectManager *)manager;
 @end

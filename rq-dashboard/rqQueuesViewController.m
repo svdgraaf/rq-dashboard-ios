@@ -9,7 +9,9 @@
 #import "rqQueuesViewController.h"
 #import <RestKit/RestKit.h>
 #import "rqQueue.h"
+#import "RQClient.h"
 #import "RQDefaultCell.h"
+#import "InAppSettings.h"
 #import "RQQueueViewController.h"
 
 
@@ -32,11 +34,45 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
 
-    self.time = 0;
-    self.reload_timeout = 2;
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(refresh:) userInfo:nil repeats:YES];
-    [self fetchQueues];
+//    I don't think this should be here
+- (void)viewWillAppear:(BOOL)animated {
+    [RQClient reset];
+
+    //    Check if we already have a url in the settings. if so, continue normally. If not
+    //    popup the settings window
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *server_url = [defaults objectForKey:@"server_url"];
+    NSLog(@"server_url: %@", server_url);
+    if([server_url isEqualToString:@"http://example.com:9181/"]) {
+        InAppSettingsModalViewController *settings = [[InAppSettingsModalViewController alloc] init];
+        [self presentViewController:settings animated:NO completion:nil];
+    }
+    
+    [self checkTimer];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.timer invalidate];
+}
+
+- (void) checkTimer {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL auto_reload_queues = [defaults boolForKey:@"auto_reload_queues"];
+    NSLog(@"auto_reload_queues: %d", auto_reload_queues);
+
+    if(self.timer) {
+        [self.timer invalidate];
+        self.progress_view.progress = 0;
+    }
+
+    if(auto_reload_queues == YES) {
+        self.time = 0;
+        self.reload_timeout = [defaults floatForKey:@"auto_refresh_timeout"];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(refresh:) userInfo:nil repeats:YES];
+        [self fetchQueues];
+    }
 }
 
 - (void)fetchQueues {
@@ -46,13 +82,14 @@
         NSArray* queues = [mappingResult array];
         NSLog(@"Loaded queues: %@", queues);
         self._queues = queues;
+        [self countJobs];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
         self.is_loading = NO;
-        [self countJobs];
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error) {
 //        #todo add popup
+        NSLog(@"failure?");
     }];
 }
 
@@ -100,16 +137,16 @@
     rqQueue *queue = [self._queues objectAtIndex:indexPath.row];
     static NSString *CellIdentifier = @"rqDefaultCell";
     rqDefaultCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    rqDefaultCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     if([queue.name isEqualToString:@"failed"]) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"rqFailedCell"];
         [cell.nameLabel setTextColor:[UIColor redColor]];
     }
     
-    int x = ([queue.count intValue] * 320 / self.max_job_count);
+    int x = ([queue.count intValue] * 310 / self.max_job_count);
+    NSLog(@"width: %d", x);
     CGRect frame = CGRectMake(0,0, x, 44);
-//    CGRect *frame = [cell.backgroundView.frame copy];
-//    NSLog(@"frame: %@", frame);
     [cell.progressView setFrame:frame];
 
     [cell.nameLabel setText:queue.name];

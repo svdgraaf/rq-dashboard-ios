@@ -7,11 +7,9 @@
 //
 
 #import "rqAppDelegate.h"
-#import <RestKit/RestKit.h>
-#import <RestKit/Network/RKObjectManager.h>
-#import "rqQueue.h"
-#import "RQJob.h"
-#import "RQWorker.h"
+//#import <RestKit/RestKit.h>
+//#import <RestKit/Network/RKObjectManager.h>
+#import "RQClient.h"
 #import "InAppSettings.h"
 
 
@@ -19,77 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //let AFNetworking manage the activity indicator
-    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-
-    // Initialize HTTPClient
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *server_url = [defaults objectForKey:@"server_url"];
-    NSString *server_username = [defaults objectForKey:@"server_username"];
-    NSString *server_password = [defaults objectForKey:@"server_password"];
-
-    NSURL *baseURL = [NSURL URLWithString:server_url];
-    AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
-
-    //we want to work with JSON-Data
-    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
-    
-    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
-    if([server_username length] != 0) {
-        [objectManager.HTTPClient setAuthorizationHeaderWithUsername:server_username password:server_password];
-    }
-    
-    RKObjectMapping *queueMapping = [RKObjectMapping mappingForClass:[rqQueue class]];
-    [queueMapping addAttributeMappingsFromDictionary:@{
-                                                         @"url": @"url",
-                                                         @"count": @"count",
-                                                         @"name": @"name",
-                                                         }];
-    
-    
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:queueMapping
-                                                                                            method:RKRequestMethodGET
-                                                                                       pathPattern:@"queues\\.json"
-                                                                                           keyPath:@"queues"
-                                                                                       statusCodes:[NSIndexSet indexSetWithIndex:200]];
-    
-    [objectManager addResponseDescriptor:responseDescriptor];
-
-    RKObjectMapping *jobMapping = [RKObjectMapping mappingForClass:[RQJob class]];
-    [jobMapping addAttributeMappingsFromDictionary:@{
-                                                     @"origin": @"origin",
-                                                     @"ended_at": @"ended_at",
-                                                     @"created_at": @"created_at",
-                                                     @"enqueued_at": @"enqueued_at",
-                                                     @"description": @"description",
-                                                     @"result": @"result",
-                                                     @"exc_info": @"exc_info",
-                                                     @"id": @"identifier",
-                                                    }];
-    
-    
-    RKResponseDescriptor *jobResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:jobMapping
-                                                                                            method:RKRequestMethodGET
-                                                                                       pathPattern:@"jobs/:name\\.json"
-                                                                                           keyPath:@"jobs"
-                                                                                       statusCodes:[NSIndexSet indexSetWithIndex:200]];
-    [objectManager addResponseDescriptor:jobResponseDescriptor];
-    
-    RKObjectMapping *workerMapping = [RKObjectMapping mappingForClass:[RQWorker class]];
-    [workerMapping addAttributeMappingsFromDictionary:@{
-                                                       @"queues": @"queues",
-                                                       @"name": @"name",
-                                                       @"state": @"state",
-                                                       }];
-    RKResponseDescriptor *workerResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:workerMapping
-                                                                                               method:RKRequestMethodGET
-                                                                                          pathPattern:@"workers\\.json"
-                                                                                              keyPath:@"workers"
-                                                                                          statusCodes:[NSIndexSet indexSetWithIndex:200]];
-    [objectManager addResponseDescriptor:workerResponseDescriptor];
-    
-
-    
     return YES;
 }
 
@@ -97,6 +24,10 @@
     if([self class] == [rqAppDelegate class]){
         [InAppSettings registerDefaults];
     }
+}
+
+- (void)setupAPIClient {
+    [RQClient initialize];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

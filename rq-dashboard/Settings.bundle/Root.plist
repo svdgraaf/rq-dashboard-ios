@@ -52,7 +52,7 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>1s                                                             10s</string>
+			<string>0.1s                                                         10s</string>
 			<key>Title</key>
 			<string>Auto Refresh</string>
 			<key>Type</key>
@@ -72,7 +72,7 @@
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>Refresh rate (1-10s)</string>
+			<string>Refresh rate (0.1-10s)</string>
 			<key>Key</key>
 			<string>foo</string>
 		</dict>
@@ -86,7 +86,7 @@
 			<key>MaximumValueImage</key>
 			<string>10s.png</string>
 			<key>MinimumValue</key>
-			<integer>1</integer>
+			<real>0.1</real>
 			<key>MinimumValueImage</key>
 			<string>1s.png</string>
 			<key>Type</key>

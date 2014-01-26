@@ -7,7 +7,7 @@
 //
 
 #import "RQJob.h"
-#import <RestKit/Network/RKObjectManager.h>
+#import <RestKit/RestKit.h>
 
 @implementation RQJob
 
@@ -38,6 +38,28 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         // TODO: should we show an error?
     }];
+}
+
++ (void)addMappingTo:(RKObjectManager *)manager {
+    RKObjectMapping *jobMapping = [RKObjectMapping mappingForClass:[self class]];
+    [jobMapping addAttributeMappingsFromDictionary:@{
+                                                     @"origin": @"origin",
+                                                     @"ended_at": @"ended_at",
+                                                     @"created_at": @"created_at",
+                                                     @"enqueued_at": @"enqueued_at",
+                                                     @"description": @"description",
+                                                     @"result": @"result",
+                                                     @"exc_info": @"exc_info",
+                                                     @"id": @"identifier",
+                                                     }];
+    
+    
+    RKResponseDescriptor *jobResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:jobMapping
+                                                                                               method:RKRequestMethodGET
+                                                                                          pathPattern:@"jobs/:name\\.json"
+                                                                                              keyPath:@"jobs"
+                                                                                          statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    [manager addResponseDescriptor:jobResponseDescriptor];
 }
 
 @end
