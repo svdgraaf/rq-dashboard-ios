@@ -21,4 +21,4 @@ And you should be good to go. Be sure to always use the `rq-dashboard.xcworkspac
 MIT, but a shoutout is always appreciated :)
 
 ## Contributing
-Want to help out? Be sure to checkout the [issue list](https://github.com/svdgraaf/rq-dashboard-ios/issues), there probably is something you could work on :)
+Want to help out? Have any comments? Suggestions? Let me know! Be sure to checkout the [issue list](https://github.com/svdgraaf/rq-dashboard-ios/issues).
