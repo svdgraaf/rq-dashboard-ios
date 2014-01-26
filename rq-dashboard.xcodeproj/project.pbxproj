@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		860E190C189556CD00AE392B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 860E190B189556CD00AE392B /* Settings.bundle */; };
+		860E190F18955B2200AE392B /* 10s.png in Resources */ = {isa = PBXBuildFile; fileRef = 860E190D18955B2200AE392B /* 10s.png */; };
+		860E191018955B2200AE392B /* 1s.png in Resources */ = {isa = PBXBuildFile; fileRef = 860E190E18955B2200AE392B /* 1s.png */; };
 		86328D6C18870D2400C3479B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86328D6B18870D2400C3479B /* Foundation.framework */; };
 		86328D6E18870D2400C3479B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86328D6D18870D2400C3479B /* CoreGraphics.framework */; };
 		86328D7018870D2400C3479B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86328D6F18870D2400C3479B /* UIKit.framework */; };
@@ -23,6 +26,7 @@
 		86328D9D18870D2500C3479B /* rq_dashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86328D9C18870D2500C3479B /* rq_dashboardTests.m */; };
 		863539D8189446FC007384C5 /* RQWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 863539D7189446FC007384C5 /* RQWorker.m */; };
 		863539DE1894483C007384C5 /* RQWorkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 863539DD1894483C007384C5 /* RQWorkerViewController.m */; };
+		8651D38C18955E4700F61B78 /* RQSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8651D38B18955E4700F61B78 /* RQSettingsViewController.m */; };
 		866B86881893D23300DBD3CA /* RQJobViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 866B86871893D23300DBD3CA /* RQJobViewController.m */; };
 		866B86901893D47400DBD3CA /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 866B868E1893D47400DBD3CA /* delete.png */; };
 		866B86911893D47400DBD3CA /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 866B868F1893D47400DBD3CA /* delete@2x.png */; };
@@ -54,6 +58,9 @@
 /* Begin PBXFileReference section */
 		68C3099FD003430D8E48CDF8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		74304A8CB37E482BA342CC13 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		860E190B189556CD00AE392B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		860E190D18955B2200AE392B /* 10s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10s.png; sourceTree = "<group>"; };
+		860E190E18955B2200AE392B /* 1s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1s.png; sourceTree = "<group>"; };
 		86328D6818870D2400C3479B /* rq-dashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rq-dashboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86328D6B18870D2400C3479B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86328D6D18870D2400C3479B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,6 +83,8 @@
 		863539D7189446FC007384C5 /* RQWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQWorker.m; sourceTree = "<group>"; };
 		863539DC1894483C007384C5 /* RQWorkerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RQWorkerViewController.h; sourceTree = "<group>"; };
 		863539DD1894483C007384C5 /* RQWorkerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQWorkerViewController.m; sourceTree = "<group>"; };
+		8651D38A18955E4700F61B78 /* RQSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RQSettingsViewController.h; sourceTree = "<group>"; };
+		8651D38B18955E4700F61B78 /* RQSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQSettingsViewController.m; sourceTree = "<group>"; };
 		866B86861893D23300DBD3CA /* RQJobViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RQJobViewController.h; sourceTree = "<group>"; };
 		866B86871893D23300DBD3CA /* RQJobViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQJobViewController.m; sourceTree = "<group>"; };
 		866B868E1893D47400DBD3CA /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
@@ -176,6 +185,8 @@
 				866B86871893D23300DBD3CA /* RQJobViewController.m */,
 				863539DC1894483C007384C5 /* RQWorkerViewController.h */,
 				863539DD1894483C007384C5 /* RQWorkerViewController.m */,
+				8651D38A18955E4700F61B78 /* RQSettingsViewController.h */,
+				8651D38B18955E4700F61B78 /* RQSettingsViewController.m */,
 			);
 			path = "rq-dashboard";
 			sourceTree = "<group>";
@@ -188,6 +199,7 @@
 				86328D7418870D2400C3479B /* InfoPlist.strings */,
 				86328D7718870D2400C3479B /* main.m */,
 				86328D7918870D2500C3479B /* rq-dashboard-Prefix.pch */,
+				860E190B189556CD00AE392B /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -226,6 +238,8 @@
 		866B868D1893D45C00DBD3CA /* images */ = {
 			isa = PBXGroup;
 			children = (
+				860E190D18955B2200AE392B /* 10s.png */,
+				860E190E18955B2200AE392B /* 1s.png */,
 				866B868E1893D47400DBD3CA /* delete.png */,
 				866B868F1893D47400DBD3CA /* delete@2x.png */,
 				867CA7961891BEF50077D120 /* settings.png */,
@@ -330,6 +344,7 @@
 			files = (
 				867CA7951891BEEC0077D120 /* workers@2x.png in Resources */,
 				867CA7881891BCC30077D120 /* list.png in Resources */,
+				860E190C189556CD00AE392B /* Settings.bundle in Resources */,
 				866B86911893D47400DBD3CA /* delete@2x.png in Resources */,
 				867CA7891891BCC30077D120 /* list@2x.png in Resources */,
 				866B86901893D47400DBD3CA /* delete.png in Resources */,
@@ -337,6 +352,8 @@
 				86328D8A18870D2500C3479B /* Images.xcassets in Resources */,
 				86328D7F18870D2500C3479B /* Main_iPhone.storyboard in Resources */,
 				86328D7618870D2400C3479B /* InfoPlist.strings in Resources */,
+				860E191018955B2200AE392B /* 1s.png in Resources */,
+				860E190F18955B2200AE392B /* 10s.png in Resources */,
 				867CA7991891BEF50077D120 /* settings@2x.png in Resources */,
 				867CA7941891BEEC0077D120 /* workers.png in Resources */,
 				867CA7981891BEF50077D120 /* settings.png in Resources */,
@@ -395,6 +412,7 @@
 				86E24D091887120900AB85AC /* rqQueuesViewController.m in Sources */,
 				863539DE1894483C007384C5 /* RQWorkerViewController.m in Sources */,
 				86328D7818870D2400C3479B /* main.m in Sources */,
+				8651D38C18955E4700F61B78 /* RQSettingsViewController.m in Sources */,
 				86E24D1918871CD300AB85AC /* RQJob.m in Sources */,
 				86E24D1C188724C300AB85AC /* RQJobCell.m in Sources */,
 				86E24D1618871C1F00AB85AC /* RQQueueViewController.m in Sources */,

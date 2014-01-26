@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_ISO8601DateFormatterValueTransformer 5
 #define COCOAPODS_VERSION_PATCH_ISO8601DateFormatterValueTransformer 0
 
+// InAppSettings
+#define COCOAPODS_POD_AVAILABLE_InAppSettings
+#define COCOAPODS_VERSION_MAJOR_InAppSettings 1
+#define COCOAPODS_VERSION_MINOR_InAppSettings 0
+#define COCOAPODS_VERSION_PATCH_InAppSettings 0
+
 // RKValueTransformers
 #define COCOAPODS_POD_AVAILABLE_RKValueTransformers
 #define COCOAPODS_VERSION_MAJOR_RKValueTransformers 1
