@@ -132,19 +132,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+//    do we need this?
+    rqDefaultCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"foobar"];
     
     rqQueue *queue = [self._queues objectAtIndex:indexPath.row];
     static NSString *CellIdentifier = @"rqDefaultCell";
-    rqDefaultCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
 //    rqDefaultCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     if([queue.name isEqualToString:@"failed"]) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"rqFailedCell"];
         [cell.nameLabel setTextColor:[UIColor redColor]];
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     }
     
-    int x = ([queue.count intValue] * 310 / self.max_job_count);
+    int x = ([queue.count intValue] * 320 / self.max_job_count);
     NSLog(@"width: %d", x);
     CGRect frame = CGRectMake(0,0, x, 44);
     [cell.progressView setFrame:frame];
