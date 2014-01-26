@@ -153,6 +153,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yyu-Cw-nXX">
+                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.88315217391304346" green="0.88315217391304346" blue="0.88315217391304346" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bol-a2-cBR">
                                             <rect key="frame" x="20" y="11" width="203" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -173,6 +178,7 @@
                                 <connections>
                                     <outlet property="countLabel" destination="Gfa-tV-wRV" id="Eme-8R-KW2"/>
                                     <outlet property="nameLabel" destination="bol-a2-cBR" id="Bci-aV-Cg8"/>
+                                    <outlet property="progressView" destination="Yyu-Cw-nXX" id="mtZ-V7-ClA"/>
                                     <segue destination="8u2-t6-4td" kind="push" identifier="showQueue" id="cf0-Ne-a6R"/>
                                 </connections>
                             </tableViewCell>
@@ -183,6 +189,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H6o-nt-vjj">
+                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.023573720190035896" blue="0.0" alpha="0.17999999999999999" colorSpace="calibratedRGB"/>
+                                        </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkr-FL-wzK">
                                             <rect key="frame" x="20" y="11" width="203" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -203,6 +214,7 @@
                                 <connections>
                                     <outlet property="countLabel" destination="avA-oW-r7k" id="3Je-vD-X5a"/>
                                     <outlet property="nameLabel" destination="Hkr-FL-wzK" id="Bki-MZ-USq"/>
+                                    <outlet property="progressView" destination="H6o-nt-vjj" id="y2X-bQ-p1P"/>
                                     <segue destination="8u2-t6-4td" kind="push" identifier="showQueue" id="8cH-PK-0Hh"/>
                                 </connections>
                             </tableViewCell>
@@ -353,6 +365,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXO-1S-4Oa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2422" y="-659"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="asj-nm-OzD">
+            <objects>
+                <viewController id="YT1-lG-Nc2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JX8-8c-H8S"/>
+                        <viewControllerLayoutGuide type="bottom" id="byb-uo-8gA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JrK-Bu-rFJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UMY-0p-x6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

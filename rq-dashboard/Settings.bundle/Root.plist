@@ -16,7 +16,7 @@
 			<key>AutocorrectionType</key>
 			<string>No</string>
 			<key>DefaultValue</key>
-			<string>http://example.com/</string>
+			<string>http://example.com:9181/</string>
 			<key>IsSecure</key>
 			<false/>
 			<key>Key</key>
@@ -27,18 +27,6 @@
 			<string>Server</string>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
-		</dict>
-		<dict>
-			<key>DefaultValue</key>
-			<string>9181</string>
-			<key>KeyboardType</key>
-			<string>NumberPad</string>
-			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
-			<key>Title</key>
-			<string>Port</string>
-			<key>Key</key>
-			<string>server_port</string>
 		</dict>
 		<dict>
 			<key>KeyboardType</key>

@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) UILabel IBOutlet *nameLabel;
 @property (strong, nonatomic) UILabel IBOutlet *countLabel;
+@property (strong, nonatomic) UIView IBOutlet *progressView;
 
 @end

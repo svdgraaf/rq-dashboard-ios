@@ -12,6 +12,7 @@
 #import "rqQueue.h"
 #import "RQJob.h"
 #import "RQWorker.h"
+#import "InAppSettings.h"
 
 
 @implementation rqAppDelegate
@@ -22,14 +23,21 @@
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 
     // Initialize HTTPClient
-    NSURL *baseURL = [NSURL URLWithString:@"http://brunhilda.allestoringen.nl:9181/"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *server_url = [defaults objectForKey:@"server_url"];
+    NSString *server_username = [defaults objectForKey:@"server_username"];
+    NSString *server_password = [defaults objectForKey:@"server_password"];
+
+    NSURL *baseURL = [NSURL URLWithString:server_url];
     AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
 
     //we want to work with JSON-Data
     [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
     
     RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
-//    [objectManager.HTTPClient setAuthorizationHeaderWithUsername:@"username" password:@"password"];
+    if([server_username length] != 0) {
+        [objectManager.HTTPClient setAuthorizationHeaderWithUsername:server_username password:server_password];
+    }
     
     RKObjectMapping *queueMapping = [RKObjectMapping mappingForClass:[rqQueue class]];
     [queueMapping addAttributeMappingsFromDictionary:@{
@@ -83,6 +91,12 @@
 
     
     return YES;
+}
+
++ (void)initialize{
+    if([self class] == [rqAppDelegate class]){
+        [InAppSettings registerDefaults];
+    }
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

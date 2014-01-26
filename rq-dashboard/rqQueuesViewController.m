@@ -18,6 +18,8 @@
     NSTimer *timer;
     float time;
     float reload_timeout;
+    int total_jobs;
+    int max_job_count;
     BOOL is_loading;
     UIProgressView *progress_view;
     UIRefreshControl *refresh_control;
@@ -31,8 +33,6 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.time = 0;
     self.reload_timeout = 2;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(refresh:) userInfo:nil repeats:YES];
@@ -46,13 +46,25 @@
         NSArray* queues = [mappingResult array];
         NSLog(@"Loaded queues: %@", queues);
         self._queues = queues;
-            [self.tableView reloadData];
-            [self.refreshControl endRefreshing];
-            self.is_loading = NO;
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+        self.is_loading = NO;
+        [self countJobs];
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error) {
 //        #todo add popup
     }];
+}
+
+- (void)countJobs {
+    self.total_jobs = 0;
+    self.max_job_count = 0;
+    for (rqQueue *queue in self._queues) {
+        self.total_jobs += [queue.count intValue];
+        if([queue.count intValue] > self.max_job_count) {
+            self.max_job_count = [queue.count intValue];
+        }
+    }
 }
 
 - (IBAction)refresh:(id)sender {
@@ -93,6 +105,12 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"rqFailedCell"];
         [cell.nameLabel setTextColor:[UIColor redColor]];
     }
+    
+    int x = ([queue.count intValue] * 320 / self.max_job_count);
+    CGRect frame = CGRectMake(0,0, x, 44);
+//    CGRect *frame = [cell.backgroundView.frame copy];
+//    NSLog(@"frame: %@", frame);
+    [cell.progressView setFrame:frame];
 
     [cell.nameLabel setText:queue.name];
     [cell.countLabel setText:queue.count];
