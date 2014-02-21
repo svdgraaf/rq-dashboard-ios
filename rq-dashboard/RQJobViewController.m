@@ -8,6 +8,7 @@
 
 #import "RQJobViewController.h"
 #import "RQJob.h"
+#import "RQJobDetailCell.h"
 
 @interface RQJobViewController () {
     RQJob *job;
@@ -46,16 +47,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 8;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 4;
+    return 1;
 }
 
 - (IBAction)cancel:(id)sender {
@@ -65,63 +64,102 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"foobar";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"detailLabel";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if(indexPath.section == 4) {
+        RQJobDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailText" forIndexPath:indexPath];
+        [cell.descriptionText setText:self.job.description];
+        cell.descriptionText.frame = CGRectMake(0,0,tableView.frame.size.width, cell.descriptionText.contentSize.height);
+
+        return cell;
+    }
+
+    if(indexPath.section == 6) {
+        RQJobDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailText" forIndexPath:indexPath];
+        [cell.descriptionText setText:self.job.exc_info];
+        cell.descriptionText.frame = CGRectMake(0,0,tableView.frame.size.width, cell.descriptionText.contentSize.height);
+        
+        return cell;
+    }
+
     
     // Configure the cell...
-    [cell.textLabel setText:self.job.origin];
+//    [cell.textLabel setText:self.job.origin];
+    switch(indexPath.section) {
+        case 0:
+            [cell.textLabel setText:self.job.origin];
+            break;
+        case 1:
+            [cell.textLabel setText:self.job.ended_at];
+            break;
+        case 2:
+            [cell.textLabel setText:self.job.created_at];
+            break;
+        case 3:
+            [cell.textLabel setText:self.job.enqueued_at];
+            break;
+        case 5:
+            [cell.textLabel setText:self.job.result];
+            break;
+        case 6:
+            [cell.textLabel setText:self.job.exc_info];
+            break;
+        case 7:
+            [cell.textLabel setText:self.job.identifier];
+            break;
+    }
+
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch(section) {
+        case 0:
+            return @"origin";
+        case 1:
+            return @"ended_at";
+        case 2:
+            return @"created_at";
+        case 3:
+            return @"enqueued_at";
+        case 4:
+            return @"description";
+        case 5:
+            return @"result";
+        case 6:
+            return @"exc_info";
+        case 7:
+            return @"identifier";
+    }
+    return @"";
 }
 
- */
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section != 4 && indexPath.section != 6) {
+        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
+    CGSize textViewSize;
+    UIFont *courier = [UIFont fontWithName:@"Menlo" size:12];
+    if(indexPath.section == 4) {
+        textViewSize = [self.job.description sizeWithFont:courier
+                                        constrainedToSize:CGSizeMake(tableView.frame.size.width, FLT_MAX)
+                                            lineBreakMode:NSLineBreakByWordWrapping];
+    }
+    if (indexPath.section == 6) {
+        textViewSize = [self.job.exc_info sizeWithFont:courier
+                                               constrainedToSize:CGSizeMake(tableView.frame.size.width, FLT_MAX)
+                                                   lineBreakMode:NSLineBreakByWordWrapping];
+    }
+    NSLog(@"size: %f x %f", textViewSize.height, textViewSize.width);
+    int targetSize = textViewSize.height + 20;
+    if (targetSize > 50) {
+        return targetSize;
+    } else {
+        return 70;
+    }
+}
+
 
 @end

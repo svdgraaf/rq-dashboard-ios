@@ -38,6 +38,7 @@
 		867CA7951891BEEC0077D120 /* workers@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 867CA7931891BEEC0077D120 /* workers@2x.png */; };
 		867CA7981891BEF50077D120 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 867CA7961891BEF50077D120 /* settings.png */; };
 		867CA7991891BEF50077D120 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 867CA7971891BEF50077D120 /* settings@2x.png */; };
+		86D122FC18B7A86500B018C0 /* RQJobDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D122FB18B7A86500B018C0 /* RQJobDetailCell.m */; };
 		86E24D091887120900AB85AC /* rqQueuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D081887120900AB85AC /* rqQueuesViewController.m */; };
 		86E24D0C1887142A00AB85AC /* rqQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D0B1887142A00AB85AC /* rqQueue.m */; };
 		86E24D1318871A7100AB85AC /* rqDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E24D1218871A7100AB85AC /* rqDefaultCell.m */; };
@@ -101,6 +102,8 @@
 		867CA7931891BEEC0077D120 /* workers@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "workers@2x.png"; sourceTree = "<group>"; };
 		867CA7961891BEF50077D120 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		867CA7971891BEF50077D120 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		86D122FA18B7A86500B018C0 /* RQJobDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RQJobDetailCell.h; sourceTree = "<group>"; };
+		86D122FB18B7A86500B018C0 /* RQJobDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQJobDetailCell.m; sourceTree = "<group>"; };
 		86E24D071887120900AB85AC /* rqQueuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rqQueuesViewController.h; sourceTree = "<group>"; };
 		86E24D081887120900AB85AC /* rqQueuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rqQueuesViewController.m; sourceTree = "<group>"; };
 		86E24D0A1887142A00AB85AC /* rqQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rqQueue.h; path = API/rqQueue.h; sourceTree = "<group>"; };
@@ -269,6 +272,8 @@
 				86E24D1218871A7100AB85AC /* rqDefaultCell.m */,
 				86E24D1A188724C300AB85AC /* RQJobCell.h */,
 				86E24D1B188724C300AB85AC /* RQJobCell.m */,
+				86D122FA18B7A86500B018C0 /* RQJobDetailCell.h */,
+				86D122FB18B7A86500B018C0 /* RQJobDetailCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -323,6 +328,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Serinus42;
 				TargetAttributes = {
+					86328D6718870D2400C3479B = {
+						DevelopmentTeam = J6P58Y965X;
+					};
 					86328D8E18870D2500C3479B = {
 						TestTargetID = 86328D6718870D2400C3479B;
 					};
@@ -431,6 +439,7 @@
 				863539D8189446FC007384C5 /* RQWorker.m in Sources */,
 				866B86881893D23300DBD3CA /* RQJobViewController.m in Sources */,
 				86328D7C18870D2500C3479B /* rqAppDelegate.m in Sources */,
+				86D122FC18B7A86500B018C0 /* RQJobDetailCell.m in Sources */,
 				86E24D1318871A7100AB85AC /* rqDefaultCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,10 +578,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "rq-dashboard/rq-dashboard-Prefix.pch";
 				INFOPLIST_FILE = "rq-dashboard/rq-dashboard-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "AA103B0D-DF62-4892-843A-9094262E35CF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -583,10 +595,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "rq-dashboard/rq-dashboard-Prefix.pch";
 				INFOPLIST_FILE = "rq-dashboard/rq-dashboard-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "AA103B0D-DF62-4892-843A-9094262E35CF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
